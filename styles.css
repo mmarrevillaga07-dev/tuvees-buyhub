@@ -272,5 +272,53 @@ header p {
     pointer-events: none;
 }
 
+/* ==========================================
+   PORTFOLIO STATUS BADGE LAYERS
+   ========================================== */
+
+/* Make the media container a positioning anchor for the badge */
+.media-container {
+    position: relative; 
+    width: 100%;
+    background: #000000; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.status-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 10; /* Ensures it floats strictly on top of videos */
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    
+    /* Premium frosted glass layout (Glassmorphism) */
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Subtle accent variations using your branding colors */
+.status-badge.staff-pick {
+    border-left: 3px solid var(--brand-tangerine); /* Tangerine highlight */
+}
+
+.status-badge.trending {
+    border-left: 3px solid #3b82f6; /* Premium Blue highlight */
+}
+
+.status-badge.new-release {
+    border-left: 3px solid #10b981; /* Fresh Emerald Green highlight */
+}
 
 .buy-btn:hover { background-color: #2563eb; }

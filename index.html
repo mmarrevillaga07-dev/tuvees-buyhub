@@ -39,13 +39,15 @@
         <button class="filter-btn" data-target="lifestyle">Lifestyle</button>
     </nav>
 
-    <!-- Product Grid with Target Categories Built-In -->
+        <!-- Product Grid with Target Categories & Badges Built-In -->
     <main class="product-grid" id="product-grid">
         
-        <!-- Product Card 1 (Categorized as Tech) -->
+        <!-- Product Card 1 -->
         <div class="product-card" data-category="tech">
             <a href="YOUR_AFFILIATE_LINK_1" target="_blank" rel="noopener nofollow" class="media-link">
                 <div class="media-container">
+                    <!-- ADDED: Staff Pick Badge -->
+                    <span class="status-badge staff-pick">Staff Pick</span>
                     <video src="assets/product-video-1.mp4" poster="assets/product-image-1.jpg" autoplay loop muted playsinline></video>
                 </div>
             </a>
@@ -56,10 +58,12 @@
             </div>
         </div>
 
-        <!-- Product Card 2 (Categorized as Setup) -->
+        <!-- Product Card 2 -->
         <div class="product-card" data-category="setup">
             <a href="YOUR_AFFILIATE_LINK_2" target="_blank" rel="noopener nofollow" class="media-link">
                 <div class="media-container">
+                    <!-- ADDED: Trending Badge -->
+                    <span class="status-badge trending">Trending</span>
                     <video src="assets/product-video-2.mp4" poster="assets/product-image-2.jpg" autoplay loop muted playsinline></video>
                 </div>
             </a>
@@ -70,10 +74,12 @@
             </div>
         </div>
 
-        <!-- Product Card 3 (Categorized as Lifestyle) -->
+        <!-- Product Card 3 -->
         <div class="product-card" data-category="lifestyle">
             <a href="YOUR_AFFILIATE_LINK_3" target="_blank" rel="noopener nofollow" class="media-link">
                 <div class="media-container">
+                    <!-- ADDED: New Release Badge -->
+                    <span class="status-badge new-release">New</span>
                     <video src="assets/product-video-3.mp4" poster="assets/product-image-3.jpg" autoplay loop muted playsinline></video>
                 </div>
             </a>
@@ -85,7 +91,6 @@
         </div>
 
     </main>
-
     <script src="app.js"></script>
 </body>
 </html>
