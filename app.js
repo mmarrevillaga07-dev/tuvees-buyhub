@@ -63,3 +63,43 @@ filterButtons.forEach(button => {
         });
     });
 });
+/* ====================================================
+   TUVEES BUYHUB PERFORMANCE & MEDIA OPTIMIZATION ENGINE
+   ==================================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+    const allVideos = document.querySelectorAll(".media-container video");
+
+    // Check if the user's browser supports modern Intersection Observers
+    if ("IntersectionObserver" in window) {
+        
+        const videoObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const video = entry.target;
+
+                if (entry.isIntersecting) {
+                    // Video is visible on screen -> attempt to play smoothly
+                    video.play().catch(error => {
+                        // Catches browser auto-play blockers gracefully
+                        console.log("Autoplay playback managed:", error);
+                    });
+                } else {
+                    // Video is scrolled off screen -> freeze playback to preserve battery
+                    video.pause();
+                }
+            });
+        }, {
+            // Fires the toggle sequence the exact moment 20% of the card crosses the screen edge
+            threshold: 0.20 
+        });
+
+        // Register every single video card into the observer registry loop
+        allVideos.forEach(video => {
+            videoObserver.observe(video);
+        });
+        
+    } else {
+        // Fallback for ancient browsers: leave autoplay active safely
+        allVideos.forEach(video => video.setAttribute("autoplay", "true"));
+    }
+});
