@@ -66,6 +66,46 @@ header p {
     color: var(--text-muted); 
     margin-top: 0;
 }
+/* ==========================================
+   BRAND LOGO & HEADER HEADER ALIGNMENT
+   ========================================== */
+
+.brand-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px; /* Perfect spacing between logo and text */
+    margin-bottom: 5px;
+}
+
+.header-logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.header-logo:hover {
+    transform: scale(1.05) rotate(-5deg); /* Subtle playful interaction */
+}
+
+/* Let the logo background respond beautifully to dark/light modes */
+.logo-bg {
+    fill: #16161a; /* Sleek dark gray backdrop in dark mode */
+    transition: fill 0.3s ease;
+}
+
+[data-theme="light"] .logo-bg {
+    fill: #ffffff; /* Crisp white backdrop in light mode to pop off the light gray canvas */
+}
+
+/* Adjust header subtitle to prevent layout shifting */
+.header-subtitle {
+    color: var(--text-muted); 
+    margin-top: 10px;
+    font-size: 1rem;
+}
 
 /* ==========================================
    SLEEK COMPACT TOGGLE UI BUTTON

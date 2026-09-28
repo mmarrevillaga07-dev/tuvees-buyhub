@@ -1,0 +1,10 @@
+<svg xmlns="http://w3.org" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Rounded Premium Dark Background -->
+  <rect width="512" height="512" rx="120" fill="#0b0b0c"/>
+  
+  <!-- Sleek Minimalist 'T' Brand Monogram (Signature Tangerine #ff6b35) -->
+  <path d="M160 160 H352 V208 H280 V352 H232 V208 H160 Z" fill="#ff6b35"/>
+  
+  <!-- Dynamic Hub Navigation Dot (Premium Blue #3b82f6) -->
+  <circle cx="306" cy="352" r="18" fill="#3b82f6"/>
+</svg>
