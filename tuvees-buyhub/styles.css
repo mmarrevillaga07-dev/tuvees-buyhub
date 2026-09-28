@@ -1,0 +1,170 @@
+/* ==========================================
+   THEME VARIABLE REGISTRY (PWA Defaults)
+   ========================================== */
+
+/* Default State: Premium Dark Mode */
+:root {
+    --bg-color: #0b0b0c;
+    --card-bg: #16161a;
+    --text-color: #ffffff;
+    --text-muted: #888888;
+    --text-description: #aaaaaa;
+    --accent-color: #3b82f6;     /* Royal Blue Actions */
+    --brand-tangerine: #ff6b35;  /* Vibrant Brand Identity */
+}
+
+/* Alternate State: Studio Light Mode */
+[data-theme="light"] {
+    --bg-color: #f3f4f6;         /* Soft Gray Canvas */
+    --card-bg: #ffffff;         /* Crisp White Cards */
+    --text-color: #111827;       /* Rich Charcoal Typography */
+    --text-muted: #6b7280;
+    --text-description: #4b5563;
+    --accent-color: #2563eb;     /* High Contrast Blue */
+    /* --brand-tangerine remains unassigned here so it inherits perfectly across layers */
+}
+
+/* ==========================================
+   BASE & CORE COMPONENT STYLING
+   ========================================== */
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    margin: 0;
+    padding: 20px;
+    /* Smooth global color shifting animation when clicking the switch */
+    transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+header h1 { 
+    font-weight: 700; 
+    letter-spacing: -1px; 
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+.brand-name {
+    color: var(--brand-tangerine);
+}
+
+header h1 sup {
+    font-size: 0.45em;       
+    vertical-align: super;   
+    margin-left: 2px;        
+    color: var(--brand-tangerine); 
+}
+
+header p { 
+    color: var(--text-muted); 
+    margin-top: 0;
+}
+
+/* ==========================================
+   SLEEK COMPACT TOGGLE UI BUTTON
+   ========================================== */
+
+.theme-toggle-container {
+    display: flex;
+    justify-content: flex-end;
+    max-width: 1200px;
+    margin: 0 auto 15px auto;
+}
+
+#theme-toggle-btn {
+    background: var(--card-bg);
+    border: 1px solid var(--text-muted);
+    color: var(--text-color);
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: background-color 0.3s, border-color 0.3s, transform 0.2s;
+}
+
+#theme-toggle-btn:hover {
+    transform: scale(1.08);
+}
+
+/* Update text targets down the card file to support flexible contrast */
+.product-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.product-info p { 
+    color: var(--text-description); 
+    font-size: 0.9rem; 
+    line-height: 1.4; 
+    margin-bottom: 20px; 
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.media-container {
+    width: 100%;
+    background: #000000; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.media-container video {
+    width: 100%;
+    height: auto;
+    max-height: 480px;
+    object-fit: contain;
+}
+
+.product-info {
+    padding: 20px;
+}
+
+.product-info h3 { margin: 0 0 10px 0; font-size: 1.25rem; }
+.product-info p { color: #aaa; font-size: 0.9rem; line-height: 1.4; margin-bottom: 20px; }
+
+.buy-btn {
+    display: block;
+    text-align: center;
+    background-color: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.buy-btn:hover { background-color: #2563eb; }
