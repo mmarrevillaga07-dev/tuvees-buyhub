@@ -320,5 +320,48 @@ header p {
 .status-badge.new-release {
     border-left: 3px solid #10b981; /* Fresh Emerald Green highlight */
 }
+/* ==========================================
+   SLEEK UNIFIED FOOTER ARCHITECTURE
+   ========================================== */
+
+.app-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 60px auto 20px auto;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08); /* Minimal structural boundary divider */
+    
+    /* Global Typography Reset: Regular, Clean, Non-Bold Matrix */
+    font-size: 0.85rem;
+    font-weight: 400; 
+    font-style: normal;
+    color: rgba(255, 255, 255, 0.6); /* Highly visible muted white over dark themes */
+    letter-spacing: 0.3px;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Ensure trademark matches font weight constraint */
+.app-footer sup {
+    font-size: 0.5em;
+    vertical-align: super;
+}
+
+/* Light Mode Contrast Override Selector */
+[data-theme="light"] .app-footer {
+    border-top-color: rgba(0, 0, 0, 0.08);
+    color: rgba(17, 24, 39, 0.6); /* Clean mid-contrast slate over light themes */
+}
+
+/* Prevent layout breaking on narrow mobile screens (Stacks them nicely if screen is too small) */
+@media (max-width: 480px) {
+    .app-footer {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        margin-top: 40px;
+    }
+}
 
 .buy-btn:hover { background-color: #2563eb; }
