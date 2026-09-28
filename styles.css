@@ -341,6 +341,65 @@ header p {
     letter-spacing: 0.3px;
     transition: color 0.3s ease, border-color 0.3s ease;
 }
+.app-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 60px auto 20px auto;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08); /* Minimal structural boundary divider */
+    
+    /* Typography Global Reset for Footer Elements */
+    font-size: 0.85rem;
+    font-weight: 400;
+    font-style: normal;
+    color: rgba(255, 255, 255, 0.6); /* Highly visible muted white over dark themes */
+    letter-spacing: 0.3px;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Added generous spacing between the navigation items */
+.footer-links {
+    display: flex;
+    gap: 40px; /* Increased space between About Us and Contact Us */
+}
+
+/* --- Smooth Link Hover Animation --- */
+.footer-link {
+    color: inherit; /* Automatically matches the muted white font color of your footer */
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 4px;
+    opacity: 0.85; /* Subtle blend so it matches the surrounding layout text */
+    transition: opacity 0.3s ease;
+}
+
+/* Creates a hidden animated line underneath the link */
+.footer-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0); /* Hidden at start */
+    height: 1px;         /* Sleek, thin line */
+    bottom: 0;
+    left: 0;
+    background-color: currentColor; /* Matches the text color perfectly */
+    transform-origin: bottom right;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Changes line direction on hover to grow from left to right */
+.footer-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Brings the text to full brightness on hover */
+.footer-link:hover {
+    opacity: 1; 
+}
+
 
 /* Ensure trademark matches font weight constraint */
 .app-footer sup {
