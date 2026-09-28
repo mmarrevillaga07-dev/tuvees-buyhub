@@ -31,25 +31,59 @@
         
         <p class="header-subtitle">Premium handpicked gear. Click to shop directly from the manufacturer.</p>
     </header>
+        <!-- Sleek Horizontal Filter Navigation Bar -->
+    <nav class="filter-nav">
+        <button class="filter-btn active" data-target="all">All</button>
+        <button class="filter-btn" data-target="tech">Tech</button>
+        <button class="filter-btn" data-target="setup">Setup</button>
+        <button class="filter-btn" data-target="lifestyle">Lifestyle</button>
+    </nav>
 
-
-
-    <main class="product-grid">
-        <!-- Product Card 1 -->
-        <div class="product-card">
-            <div class="media-container">
-                <!-- Autoplay, muted, looping video for sleek product demonstration -->
-                <video src="assets/product-video-1.mp4" poster="assets/product-image-1.jpg" autoplay loop muted playsinline></video>
-            </div>
+    <!-- Product Grid with Target Categories Built-In -->
+    <main class="product-grid" id="product-grid">
+        
+        <!-- Product Card 1 (Categorized as Tech) -->
+        <div class="product-card" data-category="tech">
+            <a href="YOUR_AFFILIATE_LINK_1" target="_blank" rel="noopener nofollow" class="media-link">
+                <div class="media-container">
+                    <video src="assets/product-video-1.mp4" poster="assets/product-image-1.jpg" autoplay loop muted playsinline></video>
+                </div>
+            </a>
             <div class="product-info">
                 <h3>Minimalist Mechanical Keyboard</h3>
                 <p>Ultra-responsive switches with an anodized aluminum finish.</p>
-                <!-- Direct Affiliate Link -->
-                <a href="YOUR_AFFILIATE_LINK_HERE" target="_blank" rel="noopener nofollow" class="buy-btn">View Official Store</a>
+                <a href="YOUR_AFFILIATE_LINK_1" target="_blank" rel="noopener nofollow" class="buy-btn">View Official Store</a>
             </div>
         </div>
 
-        <!-- Add more product cards by copying the structure above -->
+        <!-- Product Card 2 (Categorized as Setup) -->
+        <div class="product-card" data-category="setup">
+            <a href="YOUR_AFFILIATE_LINK_2" target="_blank" rel="noopener nofollow" class="media-link">
+                <div class="media-container">
+                    <video src="assets/product-video-2.mp4" poster="assets/product-image-2.jpg" autoplay loop muted playsinline></video>
+                </div>
+            </a>
+            <div class="product-info">
+                <h3>Ergonomic Monitor Arm</h3>
+                <p>Premium steel gas-spring desktop mount for clean cable routing.</p>
+                <a href="YOUR_AFFILIATE_LINK_2" target="_blank" rel="noopener nofollow" class="buy-btn">View Official Store</a>
+            </div>
+        </div>
+
+        <!-- Product Card 3 (Categorized as Lifestyle) -->
+        <div class="product-card" data-category="lifestyle">
+            <a href="YOUR_AFFILIATE_LINK_3" target="_blank" rel="noopener nofollow" class="media-link">
+                <div class="media-container">
+                    <video src="assets/product-video-3.mp4" poster="assets/product-image-3.jpg" autoplay loop muted playsinline></video>
+                </div>
+            </a>
+            <div class="product-info">
+                <h3>Matte Titanium Thermos</h3>
+                <p>Double-wall vacuum insulation designed for everyday travel carry.</p>
+                <a href="YOUR_AFFILIATE_LINK_3" target="_blank" rel="noopener nofollow" class="buy-btn">View Official Store</a>
+            </div>
+        </div>
+
     </main>
 
     <script src="app.js"></script>

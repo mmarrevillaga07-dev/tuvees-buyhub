@@ -206,5 +206,71 @@ header p {
     font-weight: 600;
     transition: background 0.2s;
 }
+/* ==========================================
+   DYNAMIC FILTER NAVIGATION STYLING
+   ========================================== */
+
+.filter-nav {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 0 auto 40px auto;
+    max-width: 600px;
+    overflow-x: auto; /* Allows side-swiping on small mobile phones */
+    padding: 5px;
+    scrollbar-width: none; /* Hides bulky scrollbars on Firefox */
+}
+
+.filter-nav::-webkit-scrollbar {
+    display: none; /* Hides bulky scrollbars on Chrome/Safari */
+}
+
+.filter-btn {
+    background: var(--card-bg);
+    border: 1px solid transparent;
+    color: var(--text-description);
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.filter-btn:hover {
+    border-color: var(--brand-tangerine);
+    color: var(--text-color);
+}
+
+/* Active Highlight State matching your signature Tangerine brand */
+.filter-btn.active {
+    background: var(--brand-tangerine);
+    color: #ffffff;
+    border-color: var(--brand-tangerine);
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+}
+
+/* Animation classes applied by JavaScript filtering */
+.product-card {
+    transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.product-card.hidden {
+    opacity: 0;
+    transform: scale(0.92);
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    border: none;
+    pointer-events: none;
+}
+
 
 .buy-btn:hover { background-color: #2563eb; }

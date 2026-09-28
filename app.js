@@ -35,3 +35,31 @@ function updateToggleIcon(theme) {
     // If the theme is light, show the moon icon (to switch to dark), and vice versa
     themeIcon.innerHTML = theme === 'light' ? moonIcon : sunIcon;
 }
+
+/* ==========================================
+   TUVEES BUYHUB CLIENT-SIDE FILTER ENGINE
+   ========================================== */
+
+const filterButtons = document.querySelectorAll('.filter-btn');
+const productCards = document.querySelectorAll('.product-card');
+
+filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        // 1. Remove 'active' highlight from all buttons, add it to the clicked one
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        const targetCategory = button.getAttribute('data-target');
+
+        // 2. Loop through all cards and hide/show them based on selection
+        productCards.forEach(card => {
+            const cardCategory = card.getAttribute('data-category');
+
+            if (targetCategory === 'all' || cardCategory === targetCategory) {
+                card.classList.remove('hidden');
+            } else {
+                card.classList.add('hidden');
+            }
+        });
+    });
+});
