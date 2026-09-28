@@ -3,19 +3,19 @@
   "name": "TUVEES BuyHub",
   "icons": [
     {
-      "src": "assets/icon-192.png",
-      "type": "image/png",
+      "src": "assets/icon-192.svg",
+      "type": "image/svg+xml",
       "sizes": "192x192"
     },
     {
-      "src": "assets/icon-512.png",
-      "type": "image/png",
+      "src": "assets/icon-512.svg",
+      "type": "image/svg+xml",
       "sizes": "512x512"
     }
   ],
-  "start_url": "/index.html",
+  "start_url": "/tuvees-buyhub/index.html",
   "background_color": "#0b0b0c",
-  "theme-color": "#000000",
+  "theme_color": "#000000",
   "display": "standalone",
   "orientation": "portrait-primary"
 }
