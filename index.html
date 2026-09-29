@@ -10,31 +10,34 @@
 </head>
 <body>
 
-        <header class="store-header">
-    <div class="header-left-group">
-        <!-- Logo and Brand Title together -->
+        <header>
+        <!-- Sleek Theme Toggle Switch Container -->
+        <div class="theme-toggle-container">
+            <button id="theme-toggle-btn" aria-label="Toggle theme">
+                <svg id="theme-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></svg>
+            </button>
+        </div>
+
+        
         <div class="brand-container">
-            <img src="assets/icon-192.svg" alt="TUVEES Logo" class="header-logo">
-            <h1 class="store-title">TUVEES<sup>™</sup> BuyHub</h1>
+            <!-- Inline SVG Logo for lightning-fast loading -->
+            <svg class="header-logo" viewBox="0 0 192 192" width="50" height="50">
+                <rect width="192" height="192" rx="46" class="logo-bg"/>
+                <path d="M60 60 H132 V78 H105 V132 H87 V78 H60 Z" fill="#ff6b35"/>
+                <circle cx="115" cy="132" r="7" fill="#3b82f6"/>
+            </svg>
+            <h1><span class="brand-name">TUVEES<sup>™</sup></span> BuyHub</h1>
         </div>
         
-        <!-- Divider Line spanning across the page layout -->
-        <div class="header-divider-line"></div>
+        <p class="header-subtitle">Premium handpicked gear. Click to shop directly from the manufacturer.</p>
+    </header>
+        <!-- Sleek Horizontal Filter Navigation Bar -->
+    <nav class="filter-nav">
+        <button class="filter-btn active" data-target="all">All</button>
+        <button class="filter-btn" data-target="tech">Tech</button>
+        <button class="filter-btn" data-target="setup">Setup</button>
+        <button class="filter-btn" data-target="lifestyle">Lifestyle</button>
         
-        <!-- Subtitle placed directly underneath the line -->
-        <p class="store-subtitle">Premium handpicked gear. Click to shop directly from the manufacturer.</p>
-    </div>
-
-    <!-- Navigation Buttons positioned slightly higher with comfortable gaps -->
-    <nav class="category-nav">
-        <button class="nav-btn active" data-category="all">All</button>
-        <button class="nav-btn" data-category="tech">Tech</button>
-        <button class="nav-btn" data-category="setup">Setup</button>
-        <button class="nav-btn" data-category="lifestyle">Lifestyle</button>
-    </nav>
-</header>
-
-
     </nav>
     <!-- Product Grid with Target Categories & Badges Built-In -->
     <main class="product-grid" id="product-grid">
