@@ -103,3 +103,25 @@ document.addEventListener("DOMContentLoaded", () => {
         allVideos.forEach(video => video.setAttribute("autoplay", "true"));
     }
 });
+// Function to show the modal
+function openModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.style.display = "flex";
+    }
+}
+
+// Function to hide the modal
+function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.style.display = "none";
+    }
+}
+
+// Optional: Close the modal if the user clicks anywhere outside of the pop-up box
+window.onclick = function(event) {
+    if (event.target.classList.contains('modal-overlay')) {
+        event.target.style.display = "none";
+    }
+}
