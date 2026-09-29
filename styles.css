@@ -39,16 +39,30 @@ body {
 }
 
 header {
-    text-align: center;
-    margin-bottom: 40px;
+    text-align: left;
+    margin-bottom: 25px; /* Brings navigation buttons slightly higher */
     position: relative;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-header h1 { 
-    font-weight: 700; 
-    letter-spacing: -1px; 
-    margin-bottom: 5px;
+header h1 {
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 12px;
     color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Leaves a perfect gap between your logo icon and text title */
+}
+
+/* ADD THIS: Modern layout line divider starting underneath your logo text */
+.header-divider-line {
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.12); /* Crisp, clean line border */
+    margin: 15px 0;
 }
 
 .brand-name {
