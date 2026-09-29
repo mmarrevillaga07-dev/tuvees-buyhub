@@ -422,5 +422,57 @@ header p {
         margin-top: 40px;
     }
 }
+/* Styling for the Read More link itself */
+.read-more-link {
+    display: inline-block;
+    color: #ff4500; /* Change this to match your theme color */
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+.read-more-link:hover {
+    text-decoration: underline;
+}
+
+/* Hidden background overlay covering the full screen */
+.modal-overlay {
+    display: none; /* Kept hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Dims the website background */
+    z-index: 1000; /* Ensures it sits on top of everything else */
+    justify-content: center;
+    align-items: center;
+}
+
+/* The actual white text card container in the center */
+.modal-content {
+    background-color: #fff;
+    color: #333;
+    padding: 30px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* The X close button positioning */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+}
+.close-btn:hover {
+    color: #000;
+}
 
 .buy-btn:hover { background-color: #2563eb; }
