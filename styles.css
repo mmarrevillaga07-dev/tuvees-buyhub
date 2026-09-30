@@ -446,31 +446,17 @@ footer {
 
 /* Hidden background overlay covering the full screen */
 .modal-overlay {
+    display: none; /* Kept hidden by default */
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.6);
-    z-index: 9999;
-    
-    /* Keep these layout engines active */
-    display: flex; 
-    justify-content: center;
-    align-items: center;
-
-    /* Use visibility to hide/show the overlay safely */
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.2s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.6); /* Dims the website background */
+    z-index: 9999; /* Forces it to sit ABOVE the grid and footer */
+    justify-content: center; /* Centers modal horizontally */
+    align-items: center; /* Centers modal vertically */
 }
-
-/* Add an active class to trigger the modal show state */
-.modal-overlay.active {
-    visibility: visible;
-    opacity: 1;
-}
-
 
 /* The actual white text card container in the center */
 .modal-content {
