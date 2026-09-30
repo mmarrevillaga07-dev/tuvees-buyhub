@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function openModal(modalId) {
     const modal = document.getElementById(modalId);
     if (modal) {
-        modal.style.display = "flex";
+        modal.classList.add("active");
     }
 }
 
@@ -115,13 +115,14 @@ function openModal(modalId) {
 function closeModal(modalId) {
     const modal = document.getElementById(modalId);
     if (modal) {
-        modal.style.display = "none";
+        modal.classList.remove("active");
     }
 }
 
 // Optional: Close the modal if the user clicks anywhere outside of the pop-up box
 window.onclick = function(event) {
     if (event.target.classList.contains('modal-overlay')) {
-        event.target.style.display = "none";
+        event.target.classList.remove("active");
     }
 }
+
