@@ -536,13 +536,19 @@ footer {
     margin: 15px 0;
 }
 
-.portrait-video {
-    width: 280px;               /* Patayong sukat (parang cellphone) */
-    height: 480px;
-    aspect-ratio: 9 / 16;       /* Portrait shape */
-    object-fit: cover;
-    border-radius: 12px;        /* Swabeng bilog sa mga sulok */
-    border: 1px solid var(--text-muted);
+video.portrait-video {
+  display: block;
+  width: 100% !important;
+  max-width: 340px;      
+  max-height: 60vh;    
+  margin: 15px auto;    
+  border-radius: 8px;  
+  object-fit: contain;  
+}
+
+.modal-close-btn {
+  position: relative; 
+  z-index: 10;        
 }
 
 /* 3. Para sa Buy Now Button Container at Istilo */
