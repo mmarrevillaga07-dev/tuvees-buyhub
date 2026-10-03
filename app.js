@@ -103,39 +103,32 @@ document.addEventListener("DOMContentLoaded", () => {
         allVideos.forEach(video => video.setAttribute("autoplay", "true"));
     }
 });
-// Function to show the modal
+// 1. Buksan ang Modal
 function openModal(modalId) {
     const modal = document.getElementById(modalId);
     if (modal) {
-         modal.style.display = "flex";
+        modal.style.display = "flex";
     }
 }
 
-// Function to hide the modal (INAYOS: May kasamang video pause)
+// 2. Isara ang Modal (May kasamang Video Stop)
 function closeModal(modalId) {
     const modal = document.getElementById(modalId);
     if (modal) {
         modal.style.display = "none";
     }
-    
-    // 🌟 Patayin ang video at i-reset ang frame kapag isinara ang modal
-    resetVideoState();
+    resetVideoState(); // Tinatawag ang helper sa ibaba
 }
 
-// Optional: Close the modal if the user clicks anywhere outside of the pop-up box (INAYOS: May kasamang video pause)
+// 3. Isara kapag pinindot ang labas ng box
 window.onclick = function(event) {
     if (event.target.classList.contains('modal-overlay')) {
         event.target.style.display = "none";
-        
-        // 🌟 Patayin din ang video kung sa labas ng modal pinindot ang pagsara
         resetVideoState();
     }
-}
+};
 
-// ==========================================
-// 📹 MGA BAGONG VIDEO FUNCTIONS (SA PINAKADULO)
-// ==========================================
-
+// 4. Palakihin ang Video kapag nag-play
 function expandVideo() {
     const videoContainer = document.getElementById('videoContainer');
     if (videoContainer) {
@@ -143,19 +136,20 @@ function expandVideo() {
     }
 }
 
+// 5. I-minimize ang video kapag pinindot ang Back button
 function minimizeVideo() {
     const videoContainer = document.getElementById('videoContainer');
     const videoElement = document.getElementById('modalVideo');
     
     if (videoElement) {
-        videoElement.pause(); // I-pause ang video kapag bumalik sa description
+        videoElement.pause();
     }
     if (videoContainer) {
-        videoContainer.classList.remove('expanded'); // Ibalik sa maliit na container sa itaas
+        videoContainer.classList.remove('expanded');
     }
 }
 
-// Helper function para i-reset ang video tuwing isasara ang modal sa kahit anong paraan
+// 6. Helper Function para sa pag-reset ng video state
 function resetVideoState() {
     const videoElement = document.getElementById('modalVideo');
     const videoContainer = document.getElementById('videoContainer');
