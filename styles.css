@@ -452,102 +452,78 @@ footer {
     text-decoration: underline;
 }
 
-/* Hidden background overlay covering the full screen */
+/* 1. ANG OVERLAY (Sinisiguradong laging naka-freeze ang background) */
 .modal-overlay {
-    display: none; /* Kept hidden by default */
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.6); /* Dims the website background */
-    z-index: 9999; /* Forces it to sit ABOVE the grid and footer */
-    justify-content: center; /* Centers modal horizontally */
-    align-items: center; /* Centers modal vertically */
-}
-
-/* The actual white text card container in the center */
-.modal-content {
-    background-color: #fff;
-    color: #333;
-    padding: 30px;
-    border-radius: 8px;
-    width: 90%;
-    max-width: 500px;
-    position: relative;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
-
-/* The X close button positioning */
-.close-btn {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 28px;
-    font-weight: bold;
-    color: #aaa;
-    cursor: pointer;
-}
-.close-btn:hover { color: #000; }
-
-.buy-btn:hover { background-color: #2563eb; }
-
-/* ==========================================
-   MODAL ADDITIONS (GALLERY, VIDEO, & BUTTON)
-   ========================================== */
-
-/* 1. Para sa Hanay ng mga Larawan (Gallery) */
-.modal-gallery {
+    background: rgba(0, 0, 0, 0.75);
     display: flex;
-    gap: 10px;                  /* Patlang sa pagitan ng mga larawan */
-    justify-content: center;    /* Igitna ang mga larawan sa modal */
-    margin: 15px 0;             /* Patlang sa itaas at ibaba */
+    justify-content: center;
+    align-items: center; /* Igitna ang modal nang patayo sa screen */
+    z-index: 9999;
 }
 
-.modal-img {
-    width: 100px;               /* Tamang sukat para sa popup */
-    height: 100px;
-    object-fit: cover;          /* Para hindi mayuyupi ang picture */
-    border-radius: 6px;         /* Medyo pabilog ang gilid */
-    border: 1px solid var(--text-muted); /* Gamit ang iyong variable para sa border */
-    cursor: pointer;
+/* 2. ANG MODAL CONTENT BOX (Dito natin pupwersahing magkasya sa screen) */
+.modal-content {
+    background: #fff;
+    width: 95%;
+    max-width: 500px;
+    
+    /* 🌟 ANG PINAKAMAHALAGANG FIX: Piliting magkasya sa screen at huwag lumagpas */
+    height: 85vh; 
+    max-height: 650px; 
+    
+    border-radius: 12px;
+    position: relative;
+    display: flex;
+    flex-direction: column; /* Hinahati sa Video sa itaas at Text sa ibaba */
+    overflow: hidden; /* Pinipigilan ang pagtagos ng kahit anong element */
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
 }
 
-/* 2. Inayos na Video Container para sa Portrait at Landscape */
+/* 📜 3. ANG SCROLLABLE BODY (Dito iikot ang scroll bar para sa gallery at text) */
+.modal-scrollable-body {
+    overflow-y: auto; /* 🌟 Dito lang iikot ang scroll ng mga specs at buy button */
+    flex-grow: 1;
+    padding: 15px 20px 25px 20px;
+    overscroll-behavior-y: contain; /* Pinipigilan ang main website page sa likod na gumalaw */
+}
+
+/* 📹 4. INAYOS NA VIDEO CONTAINER (Para lumabas ang Play controls) */
 .modal-video-container {
     position: relative;
     width: 100%;
-    background: #000; /* Itim na background para maganda tingnan kapag nag-play */
+    background: #000;
     display: flex;
     justify-content: center;
     align-items: center;
-    max-height: 250px; /* Default na taas ng video frame habang hindi pa naka-play */
-    transition: all 0.3s ease;
+    
+    /* 🌟 FIXED HEIGHT: Binigyan ng saktong taas para hindi lamunin ng video ang buong modal frame */
+    height: 230px; 
+    min-height: 230px;
+    
     overflow: hidden;
-    margin: 15px 0;
-    border-radius: 12px; /* Swabeng bilog sa mga sulok */
-    border: 1px solid var(--text-muted);
 }
 
-/* Kapag pinalaki ang video frame (Eksaktong sasakupin ang buong modal content box) */
-.modal-video-container.expanded {
-    position: absolute;
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 100%;
-    max-height: 100%;
-    margin: 0; /* Tinatanggal ang margin kapag full frame na */
-    border-radius: 0; /* Pantay sa gilid ng modal box kapag active */
-    z-index: 100; /* Lumulutang sa ibabaw ng lahat ng teksto at larawan */
-}
-
-/* Bagong tagapamahala sa mismong <video> element para maging responsive */
+/* Siguraduhing responsive ang video elements mo */
 .modal-video-container video {
     width: 100%;
     height: 100%;
+    object-fit: contain; /* Swabe ang bagsak ng kahit anong orientation nang hindi napuputol */
+}
+
+/* Kapag pinalaki ang video frame habang nagpe-play */
+.modal-video-container.expanded {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     max-height: 100%;
-    object-fit: contain; /* Awtomatikong inaayos ang portrait o landscape nang walang distortion */
+    z-index: 100;
 }
 
 /* ❌ Ang Back to Info Button para sa Video */
@@ -563,16 +539,14 @@ footer {
     font-weight: bold;
     border-radius: 20px;
     cursor: pointer;
-    z-index: 102; /* Mas mataas kaysa sa video layer */
-    display: none; /* Nakatago ito habang hindi pa naka-expand ang video */
+    z-index: 102;
+    display: none;
     box-shadow: 0 2px 6px rgba(0,0,0,0.4);
 }
 
-/* Lalabas lamang ang button kapag may .expanded class ang container */
 .modal-video-container.expanded .close-video-btn {
     display: block;
 }
-
 
 /* 3. Para sa Buy Now Button Container at Istilo */
 .modal-action {
