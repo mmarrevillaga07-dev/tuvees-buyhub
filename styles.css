@@ -466,17 +466,33 @@ footer {
     align-items: center; /* Centers modal vertically */
 }
 
-/* The actual white text card container in the center */
+/* Container constraint for your modal's inner content */
 .modal-content {
-    background-color: #fff;
-    color: #333;
-    padding: 30px;
-    border-radius: 8px;
-    width: 90%;
-    max-width: 500px;
-    position: relative;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  position: relative;
+  max-width: 600px; /* Adjust based on your preferred design */
+  width: 90%;
+  margin: auto;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto; /* Enables vertical scrolling if content is too long */
 }
+
+/* Force images and videos to stay within the margins */
+.modal-content img,
+.modal-content video {
+  max-width: 100% !important;
+  height: auto !important;
+  display: block;
+  margin: 10px auto;
+}
+
+/* If your video is embedded via iframe (YouTube/Vimeo) */
+.modal-content iframe {
+  width: 100% !important;
+  aspect-ratio: 16 / 9; /* Maintains video aspect ratio without blowing up */
+  border: 0;
+}
+
 
 /* The X close button positioning */
 .close-btn {
