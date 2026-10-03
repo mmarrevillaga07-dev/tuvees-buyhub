@@ -502,8 +502,8 @@ footer {
     align-items: center;
     
     /* 🌟 FIXED HEIGHT: Binigyan ng saktong taas para hindi lamunin ng video ang buong modal frame */
-    height: 230px; 
-    min-height: 230px;
+    height: 240px; 
+    min-height: 240px;
     
     overflow: hidden;
 }
