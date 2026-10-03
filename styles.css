@@ -66,6 +66,14 @@ header p {
     color: var(--text-muted); 
     margin-top: 0;
 }
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: var(--text-muted);
+    margin: 15px 0;
+}
+
 /* ==========================================
    BRAND LOGO & HEADER HEADER ALIGNMENT
    ========================================== */
@@ -480,8 +488,72 @@ footer {
     color: #aaa;
     cursor: pointer;
 }
-.close-btn:hover {
-    color: #000;
-}
+.close-btn:hover { color: #000; }
 
 .buy-btn:hover { background-color: #2563eb; }
+
+/* ==========================================
+   MODAL ADDITIONS (GALLERY, VIDEO, & BUTTON)
+   ========================================== */
+
+/* 1. Para sa Hanay ng mga Larawan (Gallery) */
+.modal-gallery {
+    display: flex;
+    gap: 10px;                  /* Patlang sa pagitan ng mga larawan */
+    justify-content: center;    /* Igitna ang mga larawan sa modal */
+    margin: 15px 0;             /* Patlang sa itaas at ibaba */
+}
+
+.modal-img {
+    width: 100px;               /* Tamang sukat para sa popup */
+    height: 100px;
+    object-fit: cover;          /* Para hindi mayuyupi ang picture */
+    border-radius: 6px;         /* Medyo pabilog ang gilid */
+    border: 1px solid var(--text-muted); /* Gamit ang iyong variable para sa border */
+    cursor: pointer;
+}
+
+/* 2. Para sa Portrait Video Container */
+.modal-video-container {
+    display: flex;
+    justify-content: center;    /* Igitna ang video sa loob ng modal */
+    margin: 15px 0;
+}
+
+.portrait-video {
+    width: 280px;               /* Patayong sukat (parang cellphone) */
+    height: 480px;
+    aspect-ratio: 9 / 16;       /* Portrait shape */
+    object-fit: cover;
+    border-radius: 12px;        /* Swabeng bilog sa mga sulok */
+    border: 1px solid var(--text-muted);
+}
+
+/* 3. Para sa Buy Now Button Container at Istilo */
+.modal-action {
+    display: flex;
+    justify-content: center;    /* Igitna ang button */
+    margin-top: 25px;           /* Patlang mula sa mga specs */
+    margin-bottom: 10px;
+}
+
+.modal-buy-btn {
+    display: inline-block;
+    background-color: var(--brand-tangerine); /* Ginamit ko ang nakita kong kulay mo para terno sa logo mo! */
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;      /* Tatanggalin ang salungguhit */
+    padding: 14px 40px;         /* Kapal at haba ng button */
+    border-radius: 30px;        /* Pabilog na disenyo */
+    box-shadow: 0 4px 15px rgba(255, 85, 0, 0.2); /* Kaunting anino */
+    transition: all 0.3s ease;  /* Swabeng animation */
+}
+
+/* Effect kapag tinapatan ng mouse ang button (Hover) */
+.modal-buy-btn:hover {
+    filter: brightness(0.9);    /* Bahagyang didilim para malaman ng user na clickable */
+    transform: translateY(-2px); /* Bahagyang aangat ang button */
+    box-shadow: 0 6px 20px rgba(255, 85, 0, 0.4);
+}
+
