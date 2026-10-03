@@ -111,18 +111,61 @@ function openModal(modalId) {
     }
 }
 
-// Function to hide the modal
+// Function to hide the modal (INAYOS: May kasamang video pause)
 function closeModal(modalId) {
     const modal = document.getElementById(modalId);
     if (modal) {
         modal.style.display = "none";
     }
+    
+    // 🌟 Patayin ang video at i-reset ang frame kapag isinara ang modal
+    resetVideoState();
 }
 
-// Optional: Close the modal if the user clicks anywhere outside of the pop-up box
+// Optional: Close the modal if the user clicks anywhere outside of the pop-up box (INAYOS: May kasamang video pause)
 window.onclick = function(event) {
     if (event.target.classList.contains('modal-overlay')) {
         event.target.style.display = "none";
+        
+        // 🌟 Patayin din ang video kung sa labas ng modal pinindot ang pagsara
+        resetVideoState();
     }
 }
+
+// ==========================================
+// 📹 MGA BAGONG VIDEO FUNCTIONS (SA PINAKADULO)
+// ==========================================
+
+function expandVideo() {
+    const videoContainer = document.getElementById('videoContainer');
+    if (videoContainer) {
+        videoContainer.classList.add('expanded');
+    }
+}
+
+function minimizeVideo() {
+    const videoContainer = document.getElementById('videoContainer');
+    const videoElement = document.getElementById('modalVideo');
+    
+    if (videoElement) {
+        videoElement.pause(); // I-pause ang video kapag bumalik sa description
+    }
+    if (videoContainer) {
+        videoContainer.classList.remove('expanded'); // Ibalik sa maliit na container sa itaas
+    }
+}
+
+// Helper function para i-reset ang video tuwing isasara ang modal sa kahit anong paraan
+function resetVideoState() {
+    const videoElement = document.getElementById('modalVideo');
+    const videoContainer = document.getElementById('videoContainer');
+    
+    if (videoElement) {
+        videoElement.pause();
+    }
+    if (videoContainer) {
+        videoContainer.classList.remove('expanded');
+    }
+}
+
 

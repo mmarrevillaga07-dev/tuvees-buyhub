@@ -259,36 +259,43 @@
         <!-- The Actual Pop-up Content Box -->
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal('mini-power-bank-80000')">&times;</span>
+
             <h2>Mini Power Bank 80000mah Details</h2>
             <hr>
-            <div class="modal-video-container">
-            <video src="assets/powerbank-video-1.mp4" controls width="portrait-video" poster="assets/powerbank-image-1.jpg"></video>
-            </div>
-            <hr>
-            <div class="modal-gallery">
-            <img src="assets/powerbank-image-1.jpg" alt="Angle 1" class="modal-img">
-            <img src="assets/powerbank-image-2.jpg" alt="Angle 2" class="modal-img">
-            <img src="assets/powerbank-image-3.jpg" alt="Angle 3" class="modal-img">
-            <img src="assets/powerbank-image-4.jpg" alt="Angle 4" class="modal-img">
-            <img src="assets/powerbank-image-5.jpg" alt="Angle 5" class="modal-img">
-            </div>
-            <hr>
-            <p><strong>Full Specifications:</strong></p>
-            <ul>
-                <li>Input: 2A/5V</li>
-                <li>Output: 2.1A/5V</li>
-                <li>Built-in Battery capacities: 80000mAh</li>
-                <li>Size:94*30.5*94mm</li>
-                <li>LED Lamp Illumination: Yes</li>
-                <li>Cell Type: Polymer cells</li>
-                <li>Color: Black  White  Red</li>
-            </ul>
-            <p>"Shop with Confidence"</p>
 
-            <div class="modal-action">
-            <a href="https://s.shopee.ph/8V9LO1INpB" target="_blank" rel="noopener nofollow" class="modal-buy-btn">Buy Now!</a>
+            <div class="modal-video-container" id="videoContainer">
+            <button class="close-video-btn" onclick="minimizeVideo()">« Back to Info</button>
+            <video id="modalVideo" src="assets/powerbank-video-1.mp4" controls poster="assets/powerbank-image-1.jpg" onplay="expandVideo()"></video>
             </div>
 
+            <div class="modal-scrollable-body">
+            <hr>
+                <div class="modal-gallery">
+                    <img src="assets/powerbank-image-1.jpg" alt="Angle 1" class="modal-img">
+                    <img src="assets/powerbank-image-2.jpg" alt="Angle 2" class="modal-img">
+                    <img src="assets/powerbank-image-3.jpg" alt="Angle 3" class="modal-img">
+                    <img src="assets/powerbank-image-4.jpg" alt="Angle 4" class="modal-img">
+                    <img src="assets/powerbank-image-5.jpg" alt="Angle 5" class="modal-img">
+                </div>
+                <hr>
+
+                <p><strong>Full Specifications:</strong></p>
+                <ul>
+                    <li>Input: 2A/5V</li>
+                    <li>Output: 2.1A/5V</li>
+                    <li>Built-in Battery capacities: 80000mAh</li>
+                    <li>Size:94*30.5*94mm</li>
+                    <li>LED Lamp Illumination: Yes</li>
+                    <li>Cell Type: Polymer cells</li>
+                    <li>Color: Black  White  Red</li>
+                </ul>
+
+                <p>"Shop with Confidence"</p>
+
+                <div class="modal-action">
+                <a href="https://s.shopee.ph/8V9LO1INpB" target="_blank" rel="noopener nofollow" class="modal-buy-btn">Buy Now!</a>
+                </div>
+            </div>
         </div>    
     </div>
 
